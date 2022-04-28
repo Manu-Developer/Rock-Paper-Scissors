@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rock Paper Scissors Game</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="containerGame">
+			<div class="gameStats">
+				<div class="gameTitle">
+					<p>ROCK</p>
+					<p>PAPER</p>
+					<p>SCISSORS</p>
+				</div>
+				<div class="playerScore">
+					<p class="scoreTitle">Score</p>
+					<p class="score">0</p>
+				</div>
+			</div>
+
+			<div class="gameMatch">
+				<h1 class="gameMatchTitle">Make your Choice!</h1>
+				<div class="containerChoices">
+					<div class="playerChoice">
+						<img src="" class="choiceOne" />
+					</div>
+					<div class="matchResult">
+						<p class="result">Waiting for your Choice</p>
+						<button class="btnTryAgain">Try Again</button>
+					</div>
+					<div class="cpuChoice">
+						<img src="" class="choiceTwo" />
+					</div>
+				</div>
+				<div class="playerChoices">
+					<img src="./img/icon-rock.svg" alt="" class="rockChoice" />
+					<img src="./img/icon-paper.svg" alt="" class="paperChoice" />
+					<img src="./img/icon-scissors.svg" alt="" class="scissorsChoice" />
+				</div>
+			</div>
+		</div>
+		<button class="btnRules">Rules</button>
+		<script src="./game.js"></script>
+	</body>
+</html>

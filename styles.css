@@ -1,0 +1,171 @@
+:root {
+	--light: #f2f2f2;
+	--black: #020202;
+	--grey: #565468;
+	--blue: #2a45c2;
+	--light-blue: #516ef4;
+	--yellow: #eca81e;
+	--crimson: #de3a5a;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	width: 100%;
+	height: 100vh;
+	font-family: "Barlow", sans-serif;
+	background-image: radial-gradient(circle at center top, rgb(31, 55, 87) 20%, rgb(19, 21, 55) 100%);
+	background-repeat: no-repeat;
+	position: relative;
+}
+.containerGame {
+	max-width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.gameStats {
+	width: 100%;
+	max-width: 600px;
+	margin-top: 30px;
+	padding: 10px 20px;
+	border-radius: 8px;
+	border: 4px solid var(--grey);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.gameTitle {
+	padding: 20px;
+}
+.gameTitle p {
+	color: var(--light);
+	font-size: 35px;
+	font-weight: 700;
+}
+.playerScore {
+	width: 130px;
+	height: 130px;
+	padding: 20px;
+	border-radius: 8px;
+	text-align: center;
+	background-color: var(--light);
+}
+.playerScore {
+	font-weight: 700;
+}
+.scoreTitle {
+	color: var(--light-blue);
+	font-size: 20px;
+}
+.score {
+	font-size: 60px;
+	color: var(--light-blue);
+}
+.gameScore {
+	color: var(--grey);
+	font-size: 60px;
+}
+.gameMatch {
+	width: 100%;
+	max-width: 900px;
+}
+.gameMatchTitle {
+	margin: 40px 0;
+	font-size: 35px;
+	text-align: center;
+	color: var(--light);
+}
+.containerChoices {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 16px;
+}
+.matchResult {
+	text-align: center;
+}
+.result {
+	font-size: 30px;
+	font-weight: 700;
+	color: var(--light);
+}
+.btnTryAgain {
+	width: 200px;
+	padding: 10px;
+	color: var(--grey);
+	background-color: var(--light);
+	border-radius: 5px;
+	border: 3px solid var(--light);
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 700;
+}
+.btnTryAgain {
+	margin-top: 20px;
+	color: var(--grey);
+}
+.playerChoice,
+.cpuChoice {
+	width: 300px;
+	height: 300px;
+	background-color: var(--light);
+	border-radius: 50%;
+	border: 20px solid var(--crimson);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.playerChoice img {
+	width: 90px;
+}
+.cpuChoice img {
+	width: 90px;
+}
+.playerChoices {
+	display: flex;
+	margin-top: 80px;
+	justify-content: space-evenly;
+}
+.playerChoices > * {
+	width: 100px;
+	height: 100px;
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--light);
+	border-radius: 50%;
+	cursor: pointer;
+}
+.rockChoice {
+	border: 10px solid var(--crimson);
+}
+.paperChoice {
+	border: 10px solid var(--yellow);
+}
+.scissorsChoice {
+	border: 10px solid var(--light-blue);
+}
+.gameRules {
+	height: 70px;
+}
+.btnRules {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100px;
+	margin: 30px;
+	padding: 15px;
+	color: var(--light);
+	font-size: 17px;
+	font-weight: 700;
+	background-color: transparent;
+	border: 4px solid var(--light);
+	border-radius: 5px;
+	cursor: pointer;
+}
