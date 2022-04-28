@@ -1,8 +1,8 @@
-const playerScore = document.querySelector(".score");
+const playerScore = document.querySelector(".scoreGame");
 const playerChoice = document.querySelector(".playerChoice");
 const cpuChoice = document.querySelector(".cpuChoice");
-const btnTryAgain = document.querySelector(".btnTryAgain");
 const resultMatch = document.querySelector(".result");
+const btnNewMatch = document.querySelector(".btnNewMatch");
 
 const rockChoice = document.querySelector(".rockChoice");
 const paperChoice = document.querySelector(".paperChoice");
@@ -18,24 +18,29 @@ let computer;
 let score = 0;
 
 const incrementScore = () => {
-	resultMatch.innerHTML = "¡You Win!";
 	score++;
 	playerScore.textContent = score;
+	resultMatch.textContent = "¡You Win!";
 };
 
 const decrementScore = () => {
-	resultMatch.innerHTML = "¡You Lose!";
 	score--;
 	playerScore.textContent = score;
+	resultMatch.textContent = "¡You Lose!";
 };
 
-const resetScore = () => {
-	resultMatch.innerHTML = "Waiting for your Choice";
+const resetGame = () => {
+	playerChoice.style.borderColor = "#565468";
+	cpuChoice.style.borderColor = "#565468";
+	btnNewMatch.style.display = "none";
+	choiceOne.src = "";
+	choiceTwo.src = "";
 	score = 0;
 	playerScore.textContent = score;
+	resultMatch.textContent = "Waiting for your Choice";
 };
 
-btnTryAgain.addEventListener("click", resetScore);
+btnNewMatch.addEventListener("click", resetGame);
 
 const cpuRandomChoice = () => {
 	let randomChoice = Math.floor(Math.random() * 3) + 1;
@@ -43,12 +48,15 @@ const cpuRandomChoice = () => {
 	switch (randomChoice) {
 		case 1:
 			computer = "rock";
+			cpuColor = "#de3a5a";
 			break;
 		case 2:
 			computer = "paper";
+			cpuColor = "#eca81e";
 			break;
 		case 3:
 			computer = "scissors";
+			cpuColor = "#516ef4";
 			break;
 	}
 	return computer;
@@ -56,8 +64,7 @@ const cpuRandomChoice = () => {
 
 const checkWinner = () => {
 	if (player == computer) {
-		resultMatch.innerHTML = "¡Draw!";
-		return "¡Draw!";
+		resultMatch.textContent = "¡Draw!";
 	} else if (player == "rock") {
 		return computer == "scissors" ? incrementScore() : decrementScore();
 	} else if (player == "paper") {
@@ -69,17 +76,26 @@ const checkWinner = () => {
 
 arrayChoices.forEach((choice, index) => {
 	choice.addEventListener("click", () => {
-		choiceOne.src = choice.src;
+		let color;
 
 		if (index == [0]) {
 			player = "rock";
+			color = "#de3a5a";
 		} else if (index == [1]) {
 			player = "paper";
+			color = "#eca81e";
 		} else if (index == [2]) {
 			player = "scissors";
+			color = "#516ef4";
 		}
+
 		cpuRandomChoice();
-		console.log(checkWinner());
+		checkWinner();
+
+		btnNewMatch.style.display = "block";
+		playerChoice.style.borderColor = color;
+		cpuChoice.style.borderColor = cpuColor;
+		choiceOne.src = choice.src;
 		choiceTwo.src = `./img/icon-${computer}.svg`;
 	});
 });

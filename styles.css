@@ -1,11 +1,9 @@
 :root {
 	--light: #f2f2f2;
-	--black: #020202;
 	--grey: #565468;
-	--blue: #2a45c2;
-	--light-blue: #516ef4;
-	--yellow: #eca81e;
 	--crimson: #de3a5a;
+	--yellow: #eca81e;
+	--light-blue: #516ef4;
 }
 * {
 	margin: 0;
@@ -19,28 +17,29 @@ body {
 	background-image: radial-gradient(circle at center top, rgb(31, 55, 87) 20%, rgb(19, 21, 55) 100%);
 	background-repeat: no-repeat;
 	position: relative;
+	padding-bottom: 100px;
 }
 .containerGame {
 	max-width: 1000px;
 	height: 100%;
 	margin: 0 auto;
+	padding: 0 20px 30px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
+
+/* Game Stats Section */
 .gameStats {
 	width: 100%;
 	max-width: 600px;
 	margin-top: 30px;
-	padding: 10px 20px;
+	padding: 20px;
 	border-radius: 8px;
 	border: 4px solid var(--grey);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-}
-.gameTitle {
-	padding: 20px;
 }
 .gameTitle p {
 	color: var(--light);
@@ -52,24 +51,21 @@ body {
 	height: 130px;
 	padding: 20px;
 	border-radius: 8px;
+	font-weight: 700;
 	text-align: center;
 	background-color: var(--light);
-}
-.playerScore {
-	font-weight: 700;
 }
 .scoreTitle {
 	color: var(--light-blue);
 	font-size: 20px;
 }
-.score {
+.scoreGame {
 	font-size: 60px;
 	color: var(--light-blue);
 }
-.gameScore {
-	color: var(--grey);
-	font-size: 60px;
-}
+/* Game Stats Section */
+
+/* Match Section */
 .gameMatch {
 	width: 100%;
 	max-width: 900px;
@@ -86,6 +82,20 @@ body {
 	align-items: center;
 	gap: 16px;
 }
+.playerChoice,
+.cpuChoice {
+	width: 280px;
+	height: 280px;
+	background-color: var(--light);
+	border-radius: 50%;
+	border: 20px solid var(--grey);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.playerChoice img {
+	width: 90px;
+}
 .matchResult {
 	text-align: center;
 }
@@ -94,9 +104,11 @@ body {
 	font-weight: 700;
 	color: var(--light);
 }
-.btnTryAgain {
+.btnNewMatch {
+	display: none;
 	width: 200px;
 	padding: 10px;
+	margin-top: 20px;
 	color: var(--grey);
 	background-color: var(--light);
 	border-radius: 5px;
@@ -104,24 +116,11 @@ body {
 	cursor: pointer;
 	font-size: 16px;
 	font-weight: 700;
+	transition: all 1s;
 }
-.btnTryAgain {
-	margin-top: 20px;
-	color: var(--grey);
-}
-.playerChoice,
-.cpuChoice {
-	width: 300px;
-	height: 300px;
-	background-color: var(--light);
-	border-radius: 50%;
-	border: 20px solid var(--crimson);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.playerChoice img {
-	width: 90px;
+.btnNewMatch:hover {
+	transform: scale(1.07);
+	transition: all 1s;
 }
 .cpuChoice img {
 	width: 90px;
@@ -141,18 +140,33 @@ body {
 	background-color: var(--light);
 	border-radius: 50%;
 	cursor: pointer;
+	border: 10px solid;
 }
 .rockChoice {
-	border: 10px solid var(--crimson);
+	border-color: var(--crimson);
 }
 .paperChoice {
-	border: 10px solid var(--yellow);
+	border-color: var(--yellow);
 }
 .scissorsChoice {
-	border: 10px solid var(--light-blue);
+	border-color: var(--light-blue);
 }
 .gameRules {
 	height: 70px;
+}
+.rulesContainer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+}
+.gameRules {
+	background-color: var(--light);
+	width: 400px;
+	height: 400px;
 }
 .btnRules {
 	position: absolute;
@@ -160,12 +174,44 @@ body {
 	right: 0;
 	width: 100px;
 	margin: 30px;
-	padding: 15px;
-	color: var(--light);
+	padding: 10px;
+	color: var(--grey);
 	font-size: 17px;
 	font-weight: 700;
-	background-color: transparent;
-	border: 4px solid var(--light);
+	background-color: var(--light);
+	border: 3px solid var(--light);
 	border-radius: 5px;
 	cursor: pointer;
+	transition: all 1s;
 }
+.btnRules:hover {
+	transform: scale(1.07);
+	transition: all 1s;
+}
+/* Match Section */
+
+/* Media Queries */
+@media screen and (max-width: 940px) {
+	.playerChoice,
+	.cpuChoice {
+		width: 230px;
+		height: 230px;
+	}
+}
+
+@media screen and (max-width: 775px) {
+	.containerChoices {
+		flex-direction: column;
+		gap: 50px;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.gameStats,
+	.playerChoices {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+}
+/* Media Queries */
