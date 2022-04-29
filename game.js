@@ -3,9 +3,6 @@ const playerChoice = document.querySelector(".playerChoice");
 const cpuChoice = document.querySelector(".cpuChoice");
 const resultMatch = document.querySelector(".result");
 const btnNewMatch = document.querySelector(".btnNewMatch");
-const btnRules = document.querySelector(".btnRules");
-const rulesModal = document.querySelector(".rulesModal");
-const rulesModalClose = document.querySelector(".rulesClose");
 
 const rockChoice = document.querySelector(".rockChoice");
 const paperChoice = document.querySelector(".paperChoice");
@@ -44,14 +41,6 @@ const resetGame = () => {
 };
 
 btnNewMatch.addEventListener("click", resetGame);
-
-btnRules.addEventListener("click", () => {
-	rulesModal.style.display = "flex";
-});
-
-rulesModalClose.addEventListener("click", () => {
-	rulesModal.style.display = "none";
-});
 
 const cpuRandomChoice = () => {
 	let randomChoice = Math.floor(Math.random() * 3) + 1;
