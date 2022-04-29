@@ -95,11 +95,13 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.playerChoice img {
+.playerChoice img,
+.cpuChoice img {
 	width: 90px;
 }
 .matchResult {
 	text-align: center;
+	padding: 20px;
 }
 .result {
 	font-size: 30px;
@@ -123,9 +125,6 @@ body {
 .btnNewMatch:hover {
 	transform: scale(1.07);
 	transition: all 1s;
-}
-.cpuChoice img {
-	width: 90px;
 }
 .playerChoices {
 	display: flex;
@@ -156,15 +155,19 @@ body {
 /* Match Section */
 
 /* Media Queries */
-@media screen and (max-width: 940px) {
-	.playerChoice,
-	.cpuChoice {
-		width: 200px;
-		height: 200px;
+@media screen and (max-width: 650px) {
+	.containerChoices > * {
+		width: 130px;
+		height: 130px;
+		border-width: 10px;
+	}
+	.playerChoices > * {
+		width: 80px;
+		height: 80px;
 	}
 }
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 1024px) {
 	.gameStats {
 		padding: 15px;
 	}
@@ -179,19 +182,20 @@ body {
 	.gameStats {
 		gap: 15px;
 	}
+	.gameMatch {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 	.gameMatchTitle {
 		margin: 30px 0;
 	}
 	.containerChoices {
-		flex-direction: column;
-		gap: 30px;
+		gap: 15px;
 	}
-	.playerChoices {
-		margin-top: 30px;
-	}
-	.playerChoices > * {
-		width: 80px;
-		height: 80px;
+	.playerChoice img,
+	.cpuChoice img {
+		width: 50px;
 	}
 }
 /* Media Queries */
