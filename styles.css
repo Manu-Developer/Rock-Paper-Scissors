@@ -155,18 +155,6 @@ body {
 /* Match Section */
 
 /* Media Queries */
-@media screen and (max-width: 650px) {
-	.containerChoices > * {
-		width: 130px;
-		height: 130px;
-		border-width: 10px;
-	}
-	.playerChoices > * {
-		width: 80px;
-		height: 80px;
-	}
-}
-
 @media screen and (max-width: 1024px) {
 	.gameStats {
 		padding: 15px;
@@ -193,9 +181,25 @@ body {
 	.containerChoices {
 		gap: 15px;
 	}
+	.playerChoice,
+	.cpuChoice {
+		width: 200px;
+		height: 200px;
+	}
 	.playerChoice img,
 	.cpuChoice img {
 		width: 50px;
+	}
+}
+@media screen and (max-width: 650px) {
+	.containerChoices > * {
+		width: 130px;
+		height: 130px;
+		border-width: 10px;
+	}
+	.playerChoices > * {
+		width: 80px;
+		height: 80px;
 	}
 }
 /* Media Queries */
