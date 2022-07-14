@@ -1,17 +1,13 @@
-const playerScore = document.querySelector(".scoreGame");
-const playerChoice = document.querySelector(".playerChoice");
-const cpuChoice = document.querySelector(".cpuChoice");
+const playerScore = document.querySelector(".score-game");
+const playerChoice = document.querySelector(".player-choice");
+const cpuChoice = document.querySelector(".cpu-choice");
 const resultMatch = document.querySelector(".result");
 const btnNewMatch = document.querySelector(".btnNewMatch");
 
-const rockChoice = document.querySelector(".rockChoice");
-const paperChoice = document.querySelector(".paperChoice");
-const scissorsChoice = document.querySelector(".scissorsChoice");
+const arrayChoices = document.querySelectorAll(".choice");
 
-const arrayChoices = [rockChoice, paperChoice, scissorsChoice];
-
-const choiceOne = document.querySelector(".choiceOne");
-const choiceTwo = document.querySelector(".choiceTwo");
+const playerChoiceImg = document.querySelector(".player-choice-Img");
+const cpuChoiceImg = document.querySelector(".cpu-choice-Img");
 
 let player;
 let computer;
@@ -30,14 +26,15 @@ const decrementScore = () => {
 };
 
 const resetGame = () => {
-	playerChoice.style.borderColor = "#565468";
-	cpuChoice.style.borderColor = "#565468";
-	btnNewMatch.style.display = "none";
-	choiceOne.src = "";
-	choiceTwo.src = "";
 	score = 0;
 	playerScore.textContent = score;
 	resultMatch.textContent = "Waiting for your Choice";
+	playerChoice.style.borderColor = "#565468";
+	cpuChoice.style.borderColor = "#565468";
+	btnNewMatch.style.opacity = 0;
+	btnNewMatch.style.pointerEvents = "none";
+	playerChoiceImg.src = "";
+	cpuChoiceImg.src = "";
 };
 
 btnNewMatch.addEventListener("click", resetGame);
@@ -66,11 +63,11 @@ const checkWinner = () => {
 	if (player == computer) {
 		resultMatch.textContent = "¡Draw!";
 	} else if (player == "rock") {
-		return computer == "scissors" ? incrementScore() : decrementScore();
+		computer == "scissors" ? incrementScore() : decrementScore();
 	} else if (player == "paper") {
-		return computer == "rock" ? incrementScore() : decrementScore();
+		computer == "rock" ? incrementScore() : decrementScore();
 	} else if (player == "scissors") {
-		return computer == "paper" ? incrementScore() : decrementScore();
+		computer == "paper" ? incrementScore() : decrementScore();
 	}
 };
 
@@ -92,10 +89,11 @@ arrayChoices.forEach((choice, index) => {
 		cpuRandomChoice();
 		checkWinner();
 
-		btnNewMatch.style.display = "block";
 		playerChoice.style.borderColor = color;
 		cpuChoice.style.borderColor = cpuColor;
-		choiceOne.src = choice.src;
-		choiceTwo.src = `./img/icon-${computer}.svg`;
+		playerChoiceImg.src = choice.src;
+		cpuChoiceImg.src = `./img/icon-${computer}.svg`;
+		btnNewMatch.style.opacity = 1;
+		btnNewMatch.style.pointerEvents = "all";
 	});
 });

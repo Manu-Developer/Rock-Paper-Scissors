@@ -14,42 +14,46 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 		<!-- Css & Fonts Styles -->
+
+		<!-- Scripts -->
+		<script src="./game.js" defer></script>
+		<!-- Scripts -->
 	</head>
 	<body>
-		<div class="containerGame">
-			<div class="gameStats">
-				<div class="gameTitle">
+		<main class="container">
+			<div class="game-stats">
+				<div class="game-title">
 					<p>ROCK</p>
 					<p>PAPER</p>
 					<p>SCISSORS</p>
 				</div>
-				<div class="playerScore">
-					<p class="scoreTitle">Score</p>
-					<p class="scoreGame">0</p>
+				<div class="player-score">
+					<p class="score-title">Score</p>
+					<p class="score-game">0</p>
 				</div>
 			</div>
 
-			<div class="gameMatch">
-				<h1 class="gameMatchTitle">¡Make your Choice!</h1>
-				<div class="containerChoices">
-					<div class="playerChoice">
-						<img src="" class="choiceOne" />
+			<div class="game-match">
+				<h1 class="game-match-title">¡Make your Choice!</h1>
+				<div class="container-choices">
+					<div class="player-choice">
+						<img src="" class="player-choice-Img" />
 					</div>
-					<div class="cpuChoice">
-						<img src="" class="choiceTwo" />
+					<div class="cpu-choice">
+						<img src="" class="cpu-choice-Img" />
 					</div>
 				</div>
 			</div>
-			<div class="matchResult">
+
+			<div class="match-result">
 				<p class="result">Waiting for your Choice</p>
 				<button class="btnNewMatch">New Match</button>
 			</div>
-			<div class="playerChoices">
-				<img src="./img/icon-rock.svg" class="rockChoice" />
-				<img src="./img/icon-paper.svg" class="paperChoice" />
-				<img src="./img/icon-scissors.svg" class="scissorsChoice" />
+			<div class="player-choices">
+				<img src="./img/icon-rock.svg" class="rockChoice choice" />
+				<img src="./img/icon-paper.svg" class="paperChoice choice" />
+				<img src="./img/icon-scissors.svg" class="scissorsChoice choice" />
 			</div>
-		</div>
-		<script src="./game.js"></script>
+		</main>
 	</body>
 </html>
